@@ -19,8 +19,32 @@
     <body>
         <main>
             <h2>Drawing On Screen With JS</h2>
-            <canvas id="whiteboard" width="400" height="499"></canvas>
+            <canvas id="whiteBoard" width="400" height="499"></canvas>
         </main>
+
+        <script>
+            document.getElementById("whiteBoard").onclick = function() {
+                var canvas = document.getElementById("whiteBoard");
+                var context = canvas.getContext("2d");
+
+                // Set the line width and color (for all the lines).
+                context.lineWidth = 30;
+                context.strokeStyle = "rgb(205,40,40)";
+
+                // Draw the first line with the standard butt ending
+                context.moveTo(25,50); // (horizontal/vertical)
+                context.lineTo(400,50);
+                context.lineCap = "butt";
+                context.stroke();
+
+                // Draw the second line, with a round cap. Change line color and line width
+                context.lineWidth = 25;
+                context.strokeStyle = "#95CA91";
+
+                
+
+            }
+        </script>
 
     </body>
 </html>
